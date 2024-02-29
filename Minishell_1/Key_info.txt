@@ -1,0 +1,122 @@
+1- quote
+    count / pair
+2- pipe
+    count / ||->bonus not mendatory && syntax in/ouutside quote
+3- redir
+    check syntax
+
+5- add space b/w opeerator et word
+
+4- position intin > or word
+
+6- split
+
+expand
+
+7- tokenisation
+8- list
+
+
+Environement variable
+Special variables that contains information about your
+login session. Stored for the system to use when executing
+commands. They can be set, recalled, and cleared with
+exactly the same syntax used for variables
+Uuseful when you want to override default settings, or
+when you need to manage new settings that your system
+has no reason to create on its own
+when you type a command, the only reason your computer
+knows how to find the application corresponding to that
+command is that the PATH environment variable tells it
+where to look
+
+Temporary environment variables
+You can add a location to your path the way you create
+throw-away variables. It works, but only as long as the
+shell you used to modify your system path remains open.
+
+$ export PATH=$PATH:/home/seth/bin
+
+$ echo $PATH
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/snap/bin:/home/seth/bin:/home/seth/.local/bin:/snap/bin:/home/seth/bin
+
+$ exit
+
+$ echo $PATH
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/snap/bin:/home/seth/bin:/home/seth/.local/bin:/snap/bin
+
+
+Lexical analyse
+
+input: ls -al < a | grep "" 
+
+str: [ls, -al, <, a, |, grep, "", NULL]
+type: [WORD, WORD, REDIRECT, WORD, PIPE, WORD, WORD, NULL]
+
+
+
+CMD:
+echo
+- Output management 
+
+cd, pwd
+- Directory management
+
+ 
+
+export, unset, env
+
+- Environmental variable management
+
+- There was one difference between env and export.
+
+-> _=/usr/bin/env(env) , OLDPWD(export)
+
+ 
+
+exit
+- End process
+ 
+
+Quote quote(', ")
+
+- SingleQuote: Use everything literally, not metacharacters
+
+- DoubleQuote: $, \, ` are recognized as metacharacters, the rest are literal.
+
+- ex) echo " '$a' "
+
+ 
+
+redirect (<, >, >>)
+
+< : Send the contents of the file to standard input
+
+> : Send standard output to a file
+
+>>: Sends standard output to a file, additional mode
+
+ 
+
+pipe (|)
+
+- Treat standard output on the left as standard input on the right
+
+ 
+
+$char
+
+- variable
+
+-$? : Exit status of the last executed command (return value)
+
+ -> After a command without ex), echo $? (127)
+
+
+Script control (Ctrl + C, D, \)
+
+Ctrl-C : Terminate process, ( SIGINT )
+
+Ctrl-D: Send EOF to standard input (only works at the beginning of the line), exit if not input.
+
+Ctrl-\ : Terminate process, ( SIGQUIT )

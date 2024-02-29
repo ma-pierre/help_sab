@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "limits.h": "c",
+        "minishell.h": "c",
+        "stdio.h": "c",
+        "readline.h": "c",
+        "ms_error_display.h": "c"
+    }
+}
